@@ -17,6 +17,22 @@ neurofive-ml-track/
 **Titanic – Machine Learning from Disaster**
 
 The dataset contains passenger information such as age, gender, ticket class, fare, and survival status. It is widely used for learning data analysis, visualization, and machine learning fundamentals.
+### Results
+
+- **Algorithm:** Logistic Regression
+- **Training/Test Split:** 80% / 20%
+- **Accuracy:** **78.21%**
+
+#### Confusion Matrix
+
+| Actual \ Predicted | Did Not Survive | Survived |
+|--------------------|----------------:|----------:|
+| Did Not Survive | 89 | 16 |
+| Survived | 23 | 51 |
+
+### Conclusion
+
+The Logistic Regression model achieved an accuracy of **78.21%** on the Titanic dataset. The model successfully classified most passengers, correctly predicting 140 out of 179 test samples. The confusion matrix revealed both correct predictions and misclassifications, demonstrating the importance of evaluating a model using multiple metrics rather than relying solely on accuracy.
 
 ---
 
