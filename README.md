@@ -1,46 +1,41 @@
 # Neurofive ML Track
 
-This repository documents my progress through the **Neurofive Machine Learning Track**, where I complete hands-on tasks to build practical machine learning and data analysis skills.
+This repository documents my progress through the **Neurofive Machine Learning Track**, where I complete hands-on projects to build practical skills in data analysis, visualization, and machine learning using Python and scikit-learn.
+
+---
 
 ## Repository Structure
 
-```
+```text
 neurofive-ml-track/
 │── Titanic_EDA.ipynb
+│── California_Housing_Regression.ipynb
 └── README.md
 ```
 
----
+### Notebooks
 
-## Dataset
+#### 📊 Titanic_EDA.ipynb
+Contains:
+- **Task 1:** Exploratory Data Analysis (EDA)
+- **Task 2:** Data Cleaning & Data Visualization
+- **Task 3:** Logistic Regression Classification
 
-**Titanic – Machine Learning from Disaster**
-
-The dataset contains passenger information such as age, gender, ticket class, fare, and survival status. It is widely used for learning data analysis, visualization, and machine learning fundamentals.
-### Results
-
-- **Algorithm:** Logistic Regression
-- **Training/Test Split:** 80% / 20%
-- **Accuracy:** **78.21%**
-
-#### Confusion Matrix
-
-| Actual \ Predicted | Did Not Survive | Survived |
-|--------------------|----------------:|----------:|
-| Did Not Survive | 89 | 16 |
-| Survived | 23 | 51 |
-
-### Conclusion
-
-The Logistic Regression model achieved an accuracy of **78.21%** on the Titanic dataset. The model successfully classified most passengers, correctly predicting 140 out of 179 test samples. The confusion matrix revealed both correct predictions and misclassifications, demonstrating the importance of evaluating a model using multiple metrics rather than relying solely on accuracy.
+#### 🏡 California_Housing_Regression.ipynb
+Contains:
+- **Task 4:** Linear Regression
+- California Housing dataset
+- Model evaluation using RMSE and R² Score
+- Actual vs. Predicted Price visualization
 
 ---
 
-## Task 1: Exploratory Data Analysis (EDA)
+# Task 1: Exploratory Data Analysis (EDA)
 
-### Objectives
+## Objectives
+
 - Set up a Python environment using Google Colab
-- Load the Titanic dataset with Pandas
+- Load the Titanic dataset using Pandas
 - Explore the dataset using:
   - `head()`
   - `info()`
@@ -49,41 +44,114 @@ The Logistic Regression model achieved an accuracy of **78.21%** on the Titanic 
   - Dataset dimensions
   - Missing values
   - Numerical and categorical columns
-- Summarize findings through a short data story
+- Summarize findings with a short data story
 
-### Key Findings
+## Key Findings
+
 - Dataset contains **891 rows** and **12 columns**.
 - Missing values were found in the **Age**, **Cabin**, and **Embarked** columns.
-- The dataset includes both numerical and categorical features, requiring preprocessing before machine learning.
+- The dataset contains both numerical and categorical variables that require preprocessing before model training.
 
 ---
 
-## Task 2: Data Cleaning & Visualization
+# Task 2: Data Cleaning & Visualization
 
-### Objectives
-- Handle missing values using appropriate techniques
+## Objectives
+
+- Handle missing values appropriately
 - Detect outliers using boxplots
-- Visualize the dataset using Matplotlib and Seaborn
-- Interpret visualizations to understand factors affecting survival
+- Create meaningful visualizations
+- Interpret data before building a machine learning model
 
-### Data Cleaning
+## Data Cleaning
+
 - Filled missing values in **Age** using the median.
 - Filled missing values in **Embarked** using the mode.
-- Removed the **Cabin** column due to a large number of missing values.
+- Removed the **Cabin** column because it contained a large number of missing values.
 
-### Visualizations Created
-- Histogram of passenger ages
-- Boxplot of passenger fares for outlier detection
-- Bar chart showing survival counts
-- Correlation heatmap of numerical features
-- *(Optional)* Survival by gender visualization
+## Visualizations Created
 
-### Key Insight
-The analysis suggests that **Sex** has the strongest relationship with survival, as female passengers had a significantly higher survival rate than male passengers. Passenger class also appears to influence survival, with first-class passengers generally experiencing better outcomes.
+- Histogram
+- Boxplot
+- Bar Chart
+- Correlation Heatmap
+- Survival by Gender (additional visualization)
+
+## Key Insight
+
+The analysis showed that **Sex** has the strongest relationship with survival. Female passengers had a considerably higher survival rate than male passengers. Passenger class also appeared to influence survival.
 
 ---
 
-## Technologies Used
+# Task 3: Logistic Regression Classification
+
+## Objectives
+
+- Encode categorical variables using One-Hot Encoding
+- Split the dataset into training and testing sets
+- Train a Logistic Regression classifier
+- Evaluate the model using Accuracy Score
+- Analyze performance using a Confusion Matrix
+
+## Machine Learning Workflow
+
+1. Cleaned the dataset.
+2. Encoded categorical features (`Sex` and `Embarked`).
+3. Split the data using `train_test_split`.
+4. Trained a Logistic Regression model.
+5. Evaluated performance using Accuracy Score and Confusion Matrix.
+
+## Results
+
+| Metric | Value |
+|---------|------:|
+| Accuracy | **78.21%** |
+
+### Confusion Matrix
+
+| Actual \ Predicted | Did Not Survive | Survived |
+|--------------------|----------------:|----------:|
+| Did Not Survive | 89 | 16 |
+| Survived | 23 | 51 |
+
+## Conclusion
+
+The Logistic Regression model correctly classified **140 out of 179** passengers in the test dataset, achieving an accuracy of **78.21%**. The confusion matrix highlighted both successful predictions and classification errors, demonstrating the importance of evaluating a model beyond accuracy alone.
+
+---
+
+# Task 4: Linear Regression
+
+## Objectives
+
+- Load the California Housing dataset
+- Select important features affecting house prices
+- Train a Linear Regression model
+- Evaluate the model using RMSE and R² Score
+- Visualize predicted versus actual house prices
+
+## Features Used
+
+- Median Income
+- House Age
+- Average Rooms
+- Average Bedrooms
+- Population
+
+## Results
+
+| Metric | Value |
+|---------|------:|
+| RMSE | **0.802** |
+| R² Score | **0.509** |
+
+## Conclusion
+
+The Linear Regression model explained approximately **50.9%** of the variation in house prices using the selected features. The RMSE of **0.802** indicates the average prediction error, while the R² score demonstrates that the selected features capture a substantial portion of the pricing patterns. Additional features and more advanced regression algorithms could further improve model performance.
+
+---
+
+# Technologies Used
 
 - Python
 - Google Colab
@@ -91,32 +159,27 @@ The analysis suggests that **Sex** has the strongest relationship with survival,
 - NumPy
 - Matplotlib
 - Seaborn
+- Scikit-learn
 
 ---
 
-## Notebook
+# Skills Demonstrated
 
-All tasks are completed in a single notebook:
-
-- **Titanic_EDA.ipynb**
-
----
-
-## Learning Outcomes
-
-Through these tasks, I learned how to:
-
-- Perform Exploratory Data Analysis (EDA)
-- Identify and handle missing data
-- Detect outliers using boxplots
-- Create meaningful visualizations
-- Extract insights from real-world datasets
-- Prepare data for future machine learning models
+- Exploratory Data Analysis (EDA)
+- Data Cleaning
+- Feature Engineering
+- Data Visualization
+- Logistic Regression
+- Linear Regression
+- Model Evaluation
+- Classification
+- Regression
+- Machine Learning Fundamentals
 
 ---
 
-## Author
+# Author
 
 **Abeerah Ateeq**
 
-This repository will be updated as I continue progressing through the Neurofive Machine Learning Track.
+This repository is continuously updated as I progress through the Neurofive Machine Learning Track, documenting my learning journey and hands-on machine learning projects.
