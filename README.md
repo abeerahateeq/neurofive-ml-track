@@ -290,6 +290,30 @@ Compare ensemble learning models with previously trained classification models u
 ## Conclusion
 
 This task reinforced that model performance depends on both the dataset and model configuration. While ensemble methods are often among the strongest performers, a well-suited simpler model like Logistic Regression can outperform them when evaluated with default parameters.
+# Task 9: Handling Imbalanced Data
+
+## Dataset
+
+Telco Customer Churn
+
+## Technique Used
+
+- SMOTE (Synthetic Minority Oversampling Technique)
+
+## Performance Comparison
+
+| Metric | Before SMOTE | After SMOTE |
+|---------|-------------:|------------:|
+| Precision | **0.685** | **0.586** |
+| Recall | **0.601** | **0.684** |
+| F1 Score | **0.640** | **0.631** |
+
+## Key Findings
+
+- SMOTE successfully improved recall from **0.601** to **0.684**.
+- Precision decreased because the model predicted more customers as likely to churn, increasing false positives.
+- The slight reduction in F1-score highlights the trade-off between precision and recall.
+- In customer retention, improving recall can be beneficial because identifying more at-risk customers allows businesses to intervene before they leave.
 # Author
 
 **Abeerah Ateeq**
