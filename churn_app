@@ -28,7 +28,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 18,
+      "execution_count": null,
       "metadata": {
         "id": "acv80ctw7LQ1"
       },
@@ -79,7 +79,7 @@
         "\n",
         "print('`churn_app/` directory created and `churn_model.pkl` moved successfully.')"
       ],
-      "execution_count": 19,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -113,7 +113,7 @@
         "\n",
         "print('`churn_app/requirements.txt` created successfully!')"
       ],
-      "execution_count": 20,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -162,7 +162,7 @@
         "\n",
         "print('`churn_app/README.md` created successfully!')"
       ],
-      "execution_count": 21,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -290,7 +290,7 @@
         "\n",
         "print('`churn_app/app.py` created successfully!')"
       ],
-      "execution_count": 22,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -339,7 +339,7 @@
         "\n",
         "print(\"Files moved successfully to churn_app/\")"
       ],
-      "execution_count": 14,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -383,7 +383,7 @@
         "\n",
         "print('requirements.txt created successfully!')"
       ],
-      "execution_count": 15,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -441,7 +441,7 @@
         "    else:\n",
         "        st.success(\"✅ Customer is likely to stay.\")"
       ],
-      "execution_count": 16,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "error",
