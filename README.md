@@ -177,7 +177,37 @@ The Linear Regression model explained approximately **50.9%** of the variation i
 - Machine Learning Fundamentals
 
 ---
+# Task 5: Model Evaluation & Hyperparameter Tuning
 
+## Objectives
+
+- Evaluate the classification model beyond accuracy.
+- Calculate Precision, Recall, and F1-score.
+- Tune Logistic Regression using GridSearchCV.
+- Compare the original and tuned models.
+
+## Hyperparameters Tuned
+
+- C (Regularization Strength)
+- Solver
+
+## Evaluation Metrics
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+
+## Results
+
+| Model | Accuracy |
+|--------|---------:|
+| Original Logistic Regression | 78.21% |
+| Tuned Logistic Regression | 78.21% |
+
+## Conclusion
+
+Hyperparameter tuning systematically searched for better model settings using cross-validation. Comparing the original and tuned models helped demonstrate whether adjusting the model's parameters improved its predictive performance.
 # Author
 
 **Abeerah Ateeq**
