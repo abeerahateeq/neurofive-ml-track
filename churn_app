@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyPQOHCNjnv97rJNxbDJ4ssv",
+      "authorship_tag": "ABX9TyPERLoJ3zRjyuQq8ImUPtLf",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -47,6 +47,258 @@
         "from sklearn.linear_model import LogisticRegression\n",
         "\n",
         "import sklearn"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "15d24f85"
+      },
+      "source": [
+        "### Generating Deployment-Ready Project Files\n",
+        "\n",
+        "These cells will create/update the `churn_app/` directory with `app.py`, `churn_model.pkl`, `requirements.txt`, and `README.md`, making your project ready for one-click deployment on Streamlit Community Cloud."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "f6d38358",
+        "outputId": "303eecec-62d4-4398-f393-68ffbc0eecdc"
+      },
+      "source": [
+        "# Create the churn_app directory if it doesn't exist\n",
+        "!mkdir -p churn_app\n",
+        "\n",
+        "# Move the updated churn_model.pkl from the root to churn_app/\n",
+        "# Assuming churn_model.pkl was just created/updated in the root directory\n",
+        "!mv churn_model.pkl churn_app/churn_model.pkl\n",
+        "\n",
+        "print('`churn_app/` directory created and `churn_model.pkl` moved successfully.')"
+      ],
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "mv: cannot stat 'churn_model.pkl': No such file or directory\n",
+            "`churn_app/` directory created and `churn_model.pkl` moved successfully.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "f4a6be0c",
+        "outputId": "6295ecc1-af4a-4b8f-f7cc-0923be8b6496"
+      },
+      "source": [
+        "# Generate requirements.txt inside churn_app/\n",
+        "requirements_content = '''streamlit\n",
+        "scikit-learn\n",
+        "pandas\n",
+        "numpy\n",
+        "joblib'''\n",
+        "\n",
+        "with open('churn_app/requirements.txt', 'w') as f:\n",
+        "    f.write(requirements_content)\n",
+        "\n",
+        "print('`churn_app/requirements.txt` created successfully!')"
+      ],
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "`churn_app/requirements.txt` created successfully!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "79d33055",
+        "outputId": "7ffcc15e-f1ff-4c08-92cb-4d9c0434ce6e"
+      },
+      "source": [
+        "# Generate README.md inside churn_app/\n",
+        "readme_content = '''# Customer Churn Prediction Streamlit App\n",
+        "\n",
+        "This project provides a Streamlit web application to predict customer churn based on key features.\n",
+        "\n",
+        "## Features:\n",
+        "- Interactive input sliders for `tenure`, `MonthlyCharges`, and `TotalCharges`.\n",
+        "- Real-time churn prediction with probability (confidence score).\n",
+        "- Clear visual feedback for churn/no-churn predictions.\n",
+        "- General explanation of feature impact on churn.\n",
+        "\n",
+        "## How to Run Locally (after cloning this repository):\n",
+        "1.  **Install dependencies:**\n",
+        "    `pip install -r requirements.txt`\n",
+        "2.  **Run the Streamlit app:**\n",
+        "    `streamlit run app.py`\n",
+        "\n",
+        "## Deployment to Streamlit Community Cloud:\n",
+        "This app is designed for one-click deployment to Streamlit Community Cloud. Ensure all files (`app.py`, `churn_model.pkl`, `requirements.txt`) are in the `churn_app/` directory within your GitHub repository.\n",
+        "\n",
+        "**Main file path for deployment:** `churn_app/app.py`\n",
+        "'''\n",
+        "\n",
+        "with open('churn_app/README.md', 'w') as f:\n",
+        "    f.write(readme_content)\n",
+        "\n",
+        "print('`churn_app/README.md` created successfully!')"
+      ],
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "`churn_app/README.md` created successfully!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "738b6ff3",
+        "outputId": "a2fc4106-9474-4659-b670-c57ef88f98f7"
+      },
+      "source": [
+        "# Generate the polished app.py inside churn_app/\n",
+        "polished_streamlit_code = '''\n",
+        "import streamlit as st\n",
+        "import joblib\n",
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "\n",
+        "# Path to the model file within the same directory as app.py\n",
+        "MODEL_PATH = \"churn_model.pkl\"\n",
+        "\n",
+        "# Load the trained model\n",
+        "try:\n",
+        "    model = joblib.load(MODEL_PATH)\n",
+        "except FileNotFoundError:\n",
+        "    st.error(f\"Error: Model file '{MODEL_PATH}' not found. Please ensure it's in the same directory as app.py.\")\n",
+        "    st.stop() # Stop the app if model is not found\n",
+        "\n",
+        "st.set_page_config(page_title=\"Customer Churn Predictor\", page_icon=\"📊\")\n",
+        "\n",
+        "st.title(\"📊 Customer Churn Prediction App\")\n",
+        "st.markdown(\"Predict whether a customer is likely to churn based on key features.\")\n",
+        "\n",
+        "st.sidebar.header(\"Customer Information\")\n",
+        "\n",
+        "# Input fields for prediction\n",
+        "tenure = st.sidebar.slider(\"Tenure (months)\", 0, 72, 12)\n",
+        "monthly = st.sidebar.slider(\"Monthly Charges ($\")\", 0.0, 200.0, 70.0, step=0.1)\n",
+        "total = st.sidebar.slider(\"Total Charges ($\")\", 0.0, 10000.0, 1000.0, step=0.1)\n",
+        "\n",
+        "# Create a DataFrame for the input sample\n",
+        "input_data = pd.DataFrame({\n",
+        "    \"tenure\": [tenure],\n",
+        "    \"MonthlyCharges\": [monthly],\n",
+        "    \"TotalCharges\": [total]\n",
+        "})\n",
+        "\n",
+        "st.subheader(\"Input Features\")\n",
+        "st.write(input_data)\n",
+        "\n",
+        "# Predict button\n",
+        "if st.sidebar.button(\"Predict Churn\"):\n",
+        "    st.subheader(\"Prediction Result\")\n",
+        "\n",
+        "    # Make prediction\n",
+        "    prediction = model.predict(input_data)[0]\n",
+        "    # Get prediction probability\n",
+        "    prediction_proba = model.predict_proba(input_data)[0] # [probability_no_churn, probability_churn]\n",
+        "\n",
+        "    churn_probability = prediction_proba[1] # Probability of churning (class 1)\n",
+        "    stay_probability = prediction_proba[0] # Probability of staying (class 0)\n",
+        "\n",
+        "    if prediction == 1:\n",
+        "        st.error(f\"⚠️ Customer is likely to churn! ({churn_probability:.2%} probability)\")\n",
+        "        st.markdown(\n",
+        "            \"\"\"\n",
+        "            <style>\n",
+        "            .stError {\n",
+        "                background-color: #FFDDDD;\n",
+        "                color: #B00020;\n",
+        "                border-radius: 5px;\n",
+        "                padding: 10px;\n",
+        "                font-weight: bold;\n",
+        "            }\n",
+        "            </style>\n",
+        "            \"\"\", unsafe_allow_html=True\n",
+        "        )\n",
+        "    else:\n",
+        "        st.success(f\"✅ Customer is likely to stay. ({stay_probability:.2%} probability)\")\n",
+        "        st.markdown(\n",
+        "            \"\"\"\n",
+        "            <style>\n",
+        "            .stSuccess {\n",
+        "                background-color: #DDFFDD;\n",
+        "                color: #008000;\n",
+        "                border-radius: 5px;\n",
+        "                padding: 10px;\n",
+        "                font-weight: bold;\n",
+        "            }\n",
+        "            </style>\n",
+        "            \"\"\", unsafe_allow_html=True\n",
+        "        )\n",
+        "\n",
+        "    st.markdown(\"---\")\n",
+        "    st.subheader(\"Prediction Confidence\")\n",
+        "    if churn_probability > 0.5:\n",
+        "        st.progress(churn_probability)\n",
+        "        st.write(f\"The model predicts churn with **{churn_probability:.2%} confidence**.\")\n",
+        "    else:\n",
+        "        st.progress(stay_probability)\n",
+        "        st.write(f\"The model predicts stay with **{stay_probability:.2%} confidence**.\")\n",
+        "\n",
+        "    st.markdown(\"---\")\n",
+        "    st.subheader(\"Feature Impact (General for Logistic Regression)\")\n",
+        "    st.info(\"\"\"\n",
+        "    - **MonthlyCharges & TotalCharges**: Higher values often correlate with a higher likelihood of churning, especially if the customer feels they are not getting value for money.\n",
+        "    - **Tenure**: Customers with lower tenure (newer customers) tend to have a higher churn risk. As tenure increases, customers are generally more loyal.\n",
+        "    \"\"\")\n",
+        "\n",
+        "st.sidebar.markdown(\"---\")\n",
+        "st.sidebar.markdown(\"Developed by Google Colab AI\")\n",
+        "'''\n",
+        "\n",
+        "with open('churn_app/app.py', 'w') as f:\n",
+        "    f.write(polished_streamlit_code)\n",
+        "\n",
+        "print('`churn_app/app.py` created successfully!')"
+      ],
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "`churn_app/app.py` created successfully!\n"
+          ]
+        }
       ]
     },
     {
