@@ -265,6 +265,31 @@ New features created:
 ## Outcome
 
 The pipeline automated preprocessing and model training in a single reusable workflow. Feature engineering added additional information about passengers, and the trained pipeline was saved for future inference or deployment.
+# Task 8: Ensemble Learning
+
+## Objective
+
+Compare ensemble learning models with previously trained classification models using the Telco Customer Churn dataset.
+
+## Models Compared
+
+| Model | Accuracy |
+|--------|---------:|
+| Logistic Regression | **82.19%** |
+| XGBoost | **79.42%** |
+| Random Forest | **78.92%** |
+| Decision Tree | **70.97%** |
+
+## Key Findings
+
+- Logistic Regression achieved the highest accuracy in this experiment.
+- XGBoost and Random Forest performed competitively but did not surpass Logistic Regression using their default settings.
+- Decision Tree produced the lowest accuracy, demonstrating how a single tree can overfit compared to ensemble methods.
+- Ensemble methods provide additional benefits such as robustness and feature importance analysis, but they often require hyperparameter tuning to reach their full potential.
+
+## Conclusion
+
+This task reinforced that model performance depends on both the dataset and model configuration. While ensemble methods are often among the strongest performers, a well-suited simpler model like Logistic Regression can outperform them when evaluated with default parameters.
 # Author
 
 **Abeerah Ateeq**
