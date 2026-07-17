@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyMDFb9f9+qTH/8q0H3LyFxH",
+      "authorship_tag": "ABX9TyODA5p8MHbOmNH6eisypsky",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -34,7 +34,7 @@
       },
       "outputs": [],
       "source": [
-        "import pandas as pd\n",
+        ".metrics import accuracy_score, classification_report, confusion_matriximport pandas as pd\n",
         "import numpy as np\n",
         "\n",
         "import matplotlib.pyplot as plt\n",
@@ -45,7 +45,7 @@
         "from sklearn.tree import DecisionTreeClassifier\n",
         "from sklearn.linear_model import LogisticRegression\n",
         "\n",
-        "from sklearn.metrics import accuracy_score, classification_report, confusion_matrix"
+        "from sklearn"
       ]
     },
     {
@@ -55,6 +55,46 @@
       },
       "source": [
         "## Resources"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "804552cd"
+      },
+      "source": [
+        "### Organizing Application Files"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "c35e6c1f",
+        "outputId": "5561cca8-0a68-400a-a89f-e2faf3a5e85e"
+      },
+      "source": [
+        "# Create the directory if it doesn't exist\n",
+        "!mkdir -p churn_app\n",
+        "\n",
+        "# Move the files into the new directory\n",
+        "!mv app.py churn_app/\n",
+        "!mv churn_model.pkl churn_app/\n",
+        "!mv requirements.txt churn_app/\n",
+        "\n",
+        "print(\"Files moved successfully to churn_app/\")"
+      ],
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Files moved successfully to churn_app/\n"
+          ]
+        }
       ]
     },
     {
@@ -271,7 +311,7 @@
         "# This will provide a public URL to access your app.\n",
         "!streamlit run app.py"
       ],
-      "execution_count": null,
+      "execution_count": 10,
       "outputs": [
         {
           "output_type": "stream",
@@ -287,7 +327,42 @@
             "\u001b[34m  Local URL: \u001b[0m\u001b[1mhttp://localhost:8501\u001b[0m\n",
             "\u001b[34m  Network URL: \u001b[0m\u001b[1mhttp://172.28.0.12:8501\u001b[0m\n",
             "\u001b[34m  External URL: \u001b[0m\u001b[1mhttp://136.107.205.254:8501\u001b[0m\n",
-            "\u001b[0m\n"
+            "\u001b[0m\n",
+            "\u001b[34m  Stopping...\u001b[0m\n",
+            "Exception in callback Loop._read_from_self\n",
+            "handle: <Handle Loop._read_from_self>\n",
+            "Traceback (most recent call last):\n",
+            "  File \"uvloop/cbhandles.pyx\", line 66, in uvloop.loop.Handle._run\n",
+            "  File \"uvloop/loop.pyx\", line 399, in uvloop.loop.Loop._read_from_self\n",
+            "  File \"uvloop/loop.pyx\", line 404, in uvloop.loop.Loop._invoke_signals\n",
+            "  File \"uvloop/loop.pyx\", line 379, in uvloop.loop.Loop._ceval_process_signals\n",
+            "  File \"/usr/local/lib/python3.12/dist-packages/streamlit/web/bootstrap.py\", line 43, in signal_handler\n",
+            "    server.stop()\n",
+            "  File \"/usr/local/lib/python3.12/dist-packages/streamlit/web/server/server.py\", line 120, in stop\n",
+            "    cli_util.print_to_cli(\"  Stopping...\", fg=\"blue\")\n",
+            "  File \"/usr/local/lib/python3.12/dist-packages/streamlit/cli_util.py\", line 34, in print_to_cli\n",
+            "    click.secho(message, **kwargs)\n",
+            "  File \"/usr/local/lib/python3.12/dist-packages/click/termui.py\", line 752, in secho\n",
+            "    return echo(message, file=file, nl=nl, err=err, color=color)\n",
+            "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"/usr/local/lib/python3.12/dist-packages/click/utils.py\", line 345, in echo\n",
+            "    file.write(out)  # type: ignore\n",
+            "    ^^^^^^^^^^^^^^^\n",
+            "  File \"/usr/local/lib/python3.12/dist-packages/streamlit/web/bootstrap.py\", line 43, in signal_handler\n",
+            "    server.stop()\n",
+            "  File \"/usr/local/lib/python3.12/dist-packages/streamlit/web/server/server.py\", line 120, in stop\n",
+            "    cli_util.print_to_cli(\"  Stopping...\", fg=\"blue\")\n",
+            "  File \"/usr/local/lib/python3.12/dist-packages/streamlit/cli_util.py\", line 34, in print_to_cli\n",
+            "    click.secho(message, **kwargs)\n",
+            "  File \"/usr/local/lib/python3.12/dist-packages/click/termui.py\", line 752, in secho\n",
+            "    return echo(message, file=file, nl=nl, err=err, color=color)\n",
+            "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"/usr/local/lib/python3.12/dist-packages/click/utils.py\", line 345, in echo\n",
+            "    file.write(out)  # type: ignore\n",
+            "    ^^^^^^^^^^^^^^^\n",
+            "RuntimeError: reentrant call inside <_io.BufferedWriter name='<stdout>'>\n",
+            "\u001b[34m  Stopping...\u001b[0m\n",
+            "\u001b[34m  Stopping...\u001b[0m\n"
           ]
         }
       ]
