@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyPERLoJ3zRjyuQq8ImUPtLf",
+      "authorship_tag": "ABX9TyNAGAJaNSVZcClBnCU7RLTh",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -28,7 +28,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": null,
+      "execution_count": 23,
       "metadata": {
         "id": "acv80ctw7LQ1"
       },
@@ -67,7 +67,7 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "f6d38358",
-        "outputId": "303eecec-62d4-4398-f393-68ffbc0eecdc"
+        "outputId": "2ddd24e3-dfc8-4c83-ec2b-c4d099317b6a"
       },
       "source": [
         "# Create the churn_app directory if it doesn't exist\n",
@@ -79,7 +79,7 @@
         "\n",
         "print('`churn_app/` directory created and `churn_model.pkl` moved successfully.')"
       ],
-      "execution_count": null,
+      "execution_count": 24,
       "outputs": [
         {
           "output_type": "stream",
@@ -98,7 +98,7 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "f4a6be0c",
-        "outputId": "6295ecc1-af4a-4b8f-f7cc-0923be8b6496"
+        "outputId": "5a7f56b7-3b27-44fa-bdc2-edb9e39a7fde"
       },
       "source": [
         "# Generate requirements.txt inside churn_app/\n",
@@ -113,7 +113,7 @@
         "\n",
         "print('`churn_app/requirements.txt` created successfully!')"
       ],
-      "execution_count": null,
+      "execution_count": 25,
       "outputs": [
         {
           "output_type": "stream",
@@ -131,7 +131,7 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "79d33055",
-        "outputId": "7ffcc15e-f1ff-4c08-92cb-4d9c0434ce6e"
+        "outputId": "4099ea42-846f-4ba6-e333-37f44f40d3c0"
       },
       "source": [
         "# Generate README.md inside churn_app/\n",
@@ -162,7 +162,7 @@
         "\n",
         "print('`churn_app/README.md` created successfully!')"
       ],
-      "execution_count": null,
+      "execution_count": 26,
       "outputs": [
         {
           "output_type": "stream",
@@ -180,7 +180,7 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "738b6ff3",
-        "outputId": "a2fc4106-9474-4659-b670-c57ef88f98f7"
+        "outputId": "08ec98bc-4692-44be-9f9b-a74cf1002811"
       },
       "source": [
         "# Generate the polished app.py inside churn_app/\n",
@@ -290,7 +290,7 @@
         "\n",
         "print('`churn_app/app.py` created successfully!')"
       ],
-      "execution_count": null,
+      "execution_count": 27,
       "outputs": [
         {
           "output_type": "stream",
@@ -326,7 +326,7 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "c35e6c1f",
-        "outputId": "267f45b4-10be-4728-8007-358d408906fd"
+        "outputId": "75358449-0bc9-477d-d138-e4e653806edd"
       },
       "source": [
         "# Create the directory if it doesn't exist\n",
@@ -339,7 +339,7 @@
         "\n",
         "print(\"Files moved successfully to churn_app/\")"
       ],
-      "execution_count": null,
+      "execution_count": 28,
       "outputs": [
         {
           "output_type": "stream",
@@ -347,7 +347,6 @@
           "text": [
             "mv: cannot stat 'app.py': No such file or directory\n",
             "mv: cannot stat 'churn_model.pkl': No such file or directory\n",
-            "mv: cannot stat 'requirements.txt': No such file or directory\n",
             "Files moved successfully to churn_app/\n"
           ]
         }
@@ -369,7 +368,7 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "e8a5f1da",
-        "outputId": "3ff9583c-8908-4be5-e722-5c659ae1a21c"
+        "outputId": "ca106440-1064-4ece-c311-93a0c681e2f3"
       },
       "source": [
         "requirements_content = '''streamlit\n",
@@ -383,7 +382,7 @@
         "\n",
         "print('requirements.txt created successfully!')"
       ],
-      "execution_count": null,
+      "execution_count": 29,
       "outputs": [
         {
           "output_type": "stream",
@@ -411,7 +410,7 @@
           "height": 384
         },
         "id": "d1268fac",
-        "outputId": "5ddcf6d3-8bdb-4661-ab48-de6d9b75c0c0"
+        "outputId": "bf08ebfa-5c18-4768-820f-2ea1b8a56f49"
       },
       "source": [
         "import streamlit as st\n",
@@ -441,7 +440,7 @@
         "    else:\n",
         "        st.success(\"✅ Customer is likely to stay.\")"
       ],
-      "execution_count": null,
+      "execution_count": 30,
       "outputs": [
         {
           "output_type": "error",
@@ -453,6 +452,78 @@
             "\u001b[0;32m/tmp/ipykernel_2222/303703381.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mpandas\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 5\u001b[0;31m \u001b[0mmodel\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mjoblib\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mload\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"churn_model.pkl\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      6\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      7\u001b[0m \u001b[0mst\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mtitle\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"📊 Customer Churn Predictor\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
             "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/joblib/numpy_pickle.py\u001b[0m in \u001b[0;36mload\u001b[0;34m(filename, mmap_mode, ensure_native_byte_order)\u001b[0m\n\u001b[1;32m    733\u001b[0m             \u001b[0mobj\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0m_unpickle\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfobj\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mensure_native_byte_order\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mensure_native_byte_order\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    734\u001b[0m     \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 735\u001b[0;31m         \u001b[0;32mwith\u001b[0m \u001b[0mopen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilename\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"rb\"\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mf\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    736\u001b[0m             with _validate_fileobject_and_memmap(f, filename, mmap_mode) as (\n\u001b[1;32m    737\u001b[0m                 \u001b[0mfobj\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
             "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'churn_model.pkl'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "d1266fac",
+        "outputId": "5edeba23-5949-45e8-9250-924ce2f8fa10"
+      },
+      "source": [
+        "import streamlit as st\n",
+        "import joblib\n",
+        "import pandas as pd\n",
+        "\n",
+        "model = joblib.load(\"churn_app/churn_model.pkl\")\n",
+        "\n",
+        "st.title(\"📊 Customer Churn Predictor\")\n",
+        "\n",
+        "tenure = st.number_input(\"Tenure (months)\", 0, 72, 12)\n",
+        "monthly = st.number_input(\"Monthly Charges\", 0.0, 200.0, 70.0)\n",
+        "total = st.number_input(\"Total Charges\", 0.0, 10000.0, 1000.0)\n",
+        "\n",
+        "if st.button(\"Predict\"):\n",
+        "    sample = pd.DataFrame({\n",
+        "        \"tenure\":[tenure],\n",
+        "        \"MonthlyCharges\":[monthly],\n",
+        "        \"TotalCharges\":[total]\n",
+        "    })\n",
+        "\n",
+        "    prediction = model.predict(sample)\n",
+        "\n",
+        "    if prediction[0] == 1:\n",
+        "        st.error(\"⚠️ Customer is likely to churn.\")\n",
+        "    else:\n",
+        "        st.success(\"✅ Customer is likely to stay.\")"
+      ],
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "2026-07-17 16:34:39.140 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.146 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.148 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.153 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.156 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.160 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.162 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.167 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.169 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.171 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.174 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.176 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.180 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.182 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.184 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.187 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.189 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.191 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.193 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.196 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.198 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.200 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.203 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.205 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.208 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+            "2026-07-17 16:34:39.209 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
           ]
         }
       ]
@@ -775,18 +846,126 @@
     {
       "cell_type": "code",
       "metadata": {
-        "id": "57b76f76"
+        "id": "57b76f76",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "d1826b6b-3cac-4926-fed5-a7fce6fa5607"
       },
       "source": [
         "import joblib\n",
+        "import os\n",
+        "\n",
+        "# Ensure the churn_app directory exists\n",
+        "if not os.path.exists('churn_app'):\n",
+        "    os.makedirs('churn_app')\n",
         "\n",
         "# The 'lr' model is expected to be defined and trained in a previous cell (e.g., ac4bca52)\n",
-        "joblib.dump(lr, \"churn_model.pkl\")\n",
+        "joblib.dump(lr, \"churn_app/churn_model.pkl\")\n",
         "\n",
-        "print(\"Model saved successfully!\")"
+        "print(\"Model saved successfully to churn_app/churn_model.pkl!\")"
+      ],
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Model saved successfully to churn_app/churn_model.pkl!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "44484271",
+        "outputId": "3125d683-4bce-4480-c030-02a26b8cef71"
+      },
+      "source": [
+        "# Install localtunnel\n",
+        "!npm install -g localtunnel"
+      ],
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K⠹\u001b[1G\u001b[0K⠸\u001b[1G\u001b[0K⠼\u001b[1G\u001b[0K⠴\u001b[1G\u001b[0K⠦\u001b[1G\u001b[0K⠧\u001b[1G\u001b[0K⠇\u001b[1G\u001b[0K⠏\u001b[1G\u001b[0K⠋\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K⠹\u001b[1G\u001b[0K⠸\u001b[1G\u001b[0K⠼\u001b[1G\u001b[0K⠴\u001b[1G\u001b[0K⠦\u001b[1G\u001b[0K⠧\u001b[1G\u001b[0K⠇\u001b[1G\u001b[0K⠏\u001b[1G\u001b[0K⠋\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K\n",
+            "added 22 packages in 2s\n",
+            "\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K\n",
+            "\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K3 packages are looking for funding\n",
+            "\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K  run `npm fund` for details\n",
+            "\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "41f77490",
+        "outputId": "3b43c379-4d8c-4a03-8946-5a440a161552"
+      },
+      "source": [
+        "# Run the Streamlit app in the background and expose it via localtunnel\n",
+        "import subprocess\n",
+        "import threading\n",
+        "import time\n",
+        "import socket\n",
+        "\n",
+        "def run_streamlit():\n",
+        "    # Use 'app.py' located inside the 'churn_app' directory\n",
+        "    cmd = [\"streamlit\", \"run\", \"churn_app/app.py\", \"--server.port\", \"8501\", \"--server.enableCORS\", \"false\", \"--server.enableXsrfProtection\", \"false\"]\n",
+        "    p = subprocess.Popen(cmd)\n",
+        "    p.wait()\n",
+        "\n",
+        "def run_localtunnel(port):\n",
+        "    print(f\"Starting localtunnel for port {port}...\")\n",
+        "    subprocess.run([\"lt\", \"--port\", str(port), \"--subdomain\", \"colab-streamlit-churn-predictor\"]) # You can change 'colab-streamlit-churn-predictor' to a unique name\n",
+        "\n",
+        "# Start Streamlit in a separate thread\n",
+        "print(\"Starting Streamlit app...\")\n",
+        "streamlit_thread = threading.Thread(target=run_streamlit)\n",
+        "streamlit_thread.daemon = True\n",
+        "streamlit_thread.start()\n",
+        "\n",
+        "# Give Streamlit a moment to start up\n",
+        "time.sleep(5)\n",
+        "\n",
+        "# Check if port 8501 is open\n",
+        "def is_port_open(port):\n",
+        "    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n",
+        "    result = sock.connect_ex(('127.0.0.1', port))\n",
+        "    sock.close()\n",
+        "    return result == 0\n",
+        "\n",
+        "if is_port_open(8501):\n",
+        "    print(\"Streamlit app is running on port 8501.\")\n",
+        "    # Start localtunnel in the main thread\n",
+        "    run_localtunnel(8501)\n",
+        "else:\n",
+        "    print(\"Streamlit app did not start on port 8501. Please check the logs.\")"
       ],
       "execution_count": null,
-      "outputs": []
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Starting Streamlit app...\n",
+            "Streamlit app is running on port 8501.\n",
+            "Starting localtunnel for port 8501...\n"
+          ]
+        }
+      ]
     },
     {
       "cell_type": "markdown",
