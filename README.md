@@ -208,6 +208,63 @@ The Linear Regression model explained approximately **50.9%** of the variation i
 ## Conclusion
 
 Hyperparameter tuning systematically searched for better model settings using cross-validation. Comparing the original and tuned models helped demonstrate whether adjusting the model's parameters improved its predictive performance.
+# Task 6: Customer Churn Prediction
+
+## Dataset
+
+Telco Customer Churn (Kaggle)
+
+## Objectives
+
+- Perform Exploratory Data Analysis
+- Train Logistic Regression
+- Train Decision Tree
+- Compare both models
+- Identify important churn features
+- Provide business recommendations
+
+## Algorithms
+
+- Logistic Regression
+- Decision Tree Classifier
+
+## Evaluation
+
+- Accuracy Comparison
+- Feature Importance
+
+## Business Insight
+
+Contract type, tenure, and monthly charges were identified as major factors influencing customer churn. These findings can support customer retention strategies and improve business decision-making.
+# Task 7: Machine Learning Pipeline
+
+## Objectives
+
+- Build a preprocessing pipeline using ColumnTransformer
+- Scale numerical features
+- Encode categorical features
+- Combine preprocessing and Logistic Regression into one Pipeline
+- Engineer new features
+- Save the trained pipeline using Joblib
+
+## Feature Engineering
+
+New features created:
+
+- FamilySize
+- IsAlone
+
+## Technologies
+
+- Pipeline
+- ColumnTransformer
+- StandardScaler
+- OneHotEncoder
+- Joblib
+
+## Outcome
+
+The pipeline automated preprocessing and model training in a single reusable workflow. Feature engineering added additional information about passengers, and the trained pipeline was saved for future inference or deployment.
 # Author
 
 **Abeerah Ateeq**
